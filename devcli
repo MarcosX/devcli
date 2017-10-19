@@ -28,7 +28,7 @@ if [[ ${BASH_VERSION%%.*} -lt 4 ]]; then
   in_yellow "WARNING: Consider installing a more recent version of bash."
 else
   # DEBUG flag is defined as soon as possible
-  DEBUG=$(eval "[[ -n \${${MAIN_COMMAND^^}_DEBUG} ]] && echo 'true' ")
+  DEBUG=${DEBUG:-$(eval "[[ -n \${${MAIN_COMMAND^^}_DEBUG} ]] && echo 'true' ")}
 fi
 
 # add itself to PATH if needed
